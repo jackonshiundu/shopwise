@@ -23,7 +23,6 @@ export async function GET() {
         const scrapedProduct = await scrapeYourProduct(currentProduct.url);
 
         if (!scrapedProduct) return;
-        const imageUrl: any = scrapedProduct.image[0];
 
         const updatedPriceHistory = [
           ...currentProduct.priceHistory,

@@ -11,7 +11,7 @@ const ProductCard = ({ product }: Props) => {
     <Link href={`/products/${product._id}`} className="product-card">
       <div>
         <Image
-          src={product.image}
+          src={product.image[0]}
           alt={product.title}
           width={200}
           height={200}

@@ -19,7 +19,6 @@ export async function scrapeAndStoreProduct(productUrl: string) {
 
     // TODO: Implement this function
     let product = scrapedProduct;
-    const imageUrl: any = scrapedProduct.image[0];
     const existingProduct = await Product.findOne({ url: scrapedProduct.url });
     if (existingProduct) {
       const updatedPricehistory: any = [
@@ -35,7 +34,6 @@ export async function scrapeAndStoreProduct(productUrl: string) {
         averagePrice: getAveragePrice(updatedPricehistory),
       };
     }
-    product = { ...product, image: imageUrl };
     const newProduct = await Product.findOneAndUpdate(
       {
         url: scrapedProduct.url,
