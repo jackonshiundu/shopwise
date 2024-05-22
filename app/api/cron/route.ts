@@ -40,7 +40,6 @@ export async function GET() {
         };
 
         // Update Products in DB
-        product = { ...product, image: imageUrl };
 
         const updatedProduct = await Product.findOneAndUpdate(
           {
