@@ -10,8 +10,9 @@ import {
 import Product from "@/models/product.medel";
 import { NextResponse } from "next/server";
 
-export const maxDuration = 300;
+export const maxDuration = 60;
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 export async function GET() {
   try {
     connectToDB();
